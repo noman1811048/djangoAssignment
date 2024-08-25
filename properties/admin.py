@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Property, Image, Location, Amenity
 
 
+# Admin Configurations
 class ImageInline(admin.TabularInline):
     model = Image
     extra = 1
@@ -28,4 +29,5 @@ class LocationAdmin(admin.ModelAdmin):
 
 @admin.register(Amenity)
 class AmenityAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)  # Optional, for better display in the admin
+
